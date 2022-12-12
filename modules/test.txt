@@ -1,0 +1,80 @@
+find_the_files(path)
+    find_schema_files(schema_path)
+    # list_of_dir = fh.find_xsd_files(path)
+    # print(list_of_dir)
+    # list_of_sch = fh.find_xml_files(schema_path)
+    # print(list_of_sch)
+
+    if len(list_of_sch)>0:
+        for file in list_of_sch:
+            os.remove(file)
+    else:
+        print("no files found")
+
+    for new_path in list_of_dir:
+
+        with open(new_path, 'r') as f:
+            data = f.read()
+        #new_file = open(f".\Schemas\schema_file{list_of_dir.index(new_path)}.xml",'a')
+        if len(str(list_of_dir.index(new_path))) < 2:
+            new_file = open(f".\Schemas\{str(0)}{str(list_of_dir.index(new_path))}.xml", 'a')
+        else:
+            new_file = open(f".\Schemas\{str(list_of_dir.index(new_path))}.xml", 'a')
+
+        new_file.write(data)
+        new_file.close()
+
+    file_schema_path = ""
+    file_xml_path = ""
+
+    for schema_path in list_of_sch:
+        with open(schema_path,'r') as f:
+            data = f.read()
+            #print(type(data))
+        if 'name="BankAccountHolderType"' in data:
+            #values.append(schema_path + "- true")
+            values.append(list_of_dir[list_of_sch.index(schema_path)])
+            file_schema_path = list_of_dir[list_of_sch.index(schema_path)]
+            file_xml_path = schema_path
+            #print(list_of_dir[list_of_sch.index(schema_path)])
+            break
+        else:
+            values.append("false")
+            #values.append(schema_path + "- false")
+
+    with open(file_xml_path, 'r') as f:
+        data1 = f.read()
+    #os.startfile(file_xml_path)
+    #return "working"
+    #return values
+    #return render_template(file_xml_path)
+    #return "Your file will be opened in new tab"
+    return f"""
+    <div>Working</div>
+    <div>
+        <xmp>
+{data1}
+</xmp>
+</div>
+    """
+
+
+    def find_the_files(path):
+    files = os.listdir(path)
+    for item in files:
+        if os.path.isdir(os.path.join(path,item)):
+            find_the_files(os.path.join(path,item))
+        else:
+            if item.endswith('.xsd'):
+                #os.path.join(path, item)
+                list_of_dir.append(os.path.join(path,item))
+
+def find_schema_files(path):
+    files = os.listdir(path)
+    for item in files:
+        if os.path.isdir(os.path.join(path, item)):
+            find_the_files(os.path.join(path, item))
+        else:
+            if item.endswith('.xml'):
+                # os.path.join(path, item)
+                list_of_sch.append(os.path.join(path, item))

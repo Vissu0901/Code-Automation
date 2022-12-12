@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>xml handling</title>
+</head>
+<body>
+    <form action="{{ url_for('XML_handling') }}" method="post">
+        <input type="text" value="" name="path" id="path" placeholder="Enter schema folder path">
+        <input type="text" value="" name="element" id="element" placeholder="Enter element">
+        <input type="submit" value="Search">
+    </form>
+</body>
+</html>
