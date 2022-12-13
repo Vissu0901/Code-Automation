@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2014 (x64) (http://www.altova.com) by Daniel Clemence (RI Division of Information Technology) -->
+<xsd:schema xmlns="http://www.irs.gov/efile" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.irs.gov/efile" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.06">
+	<xsd:include schemaLocation="../../RICommon/RIeFileTypes.xsd"/>
+	<xsd:element name="SchQ_Sub" type="SchQ_SubType"/>
+	<xsd:complexType name="SchQ_SubType">
+		<xsd:sequence>
+			<!-- Q Sub Information -->
+			<xsd:element name="QSubNameCorp" type="RIEligCorpSubType" minOccurs="0" maxOccurs="1000"/>
+			<!-- Total Number of Q Sub Filings-->
+			<xsd:element name="QSubCount" type="IntegerNNType"/>
+		</xsd:sequence>
+	</xsd:complexType>
+</xsd:schema>

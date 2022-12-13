@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2010 rel. 3 sp1 (http://www.altova.com) by Daniel Clemence (ASC X12) -->
+<xsd:schema xmlns="http://www.irs.gov/efile" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.irs.gov/efile" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.06">
+	<xsd:include schemaLocation="../../RICommon/RIeFileTypes.xsd"/>
+	<xsd:element name="Form8826" type="Form8826Type"/>
+	<xsd:complexType name="Form8826Type">
+		<xsd:sequence>
+			<!-- Total eligible access expenses incurred -->
+			<xsd:element name="TotEligAccExp" type="USAmountType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>
+						<Description>Total eligible access expenses incurred  </Description>
+						<LineNumber>Line 1</LineNumber>
+						<FormNumber>Form1120C</FormNumber>
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<!-- Ten percent -->
+			<xsd:element name="TenPct" type="USAmountType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>
+						<Description>Ten percent of line 1  </Description>
+						<LineNumber>Line 2</LineNumber>
+						<FormNumber>Form1120C</FormNumber>
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<!-- Disabled Access Credit amount -->
+			<xsd:element name="DisAccCrdt" type="USAmountType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>
+						<Description>Disabled Access Credit amount  </Description>
+						<LineNumber>Line 4</LineNumber>
+						<FormNumber>Form1120C</FormNumber>
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+</xsd:schema>

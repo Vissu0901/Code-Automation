@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2010 rel. 3 sp1 (http://www.altova.com) by Daniel Clemence (ASC X12) -->
+<xsd:schema xmlns="http://www.irs.gov/efile" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.irs.gov/efile" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.06">
+	<xsd:include schemaLocation="../../RICommon/RIeFileTypes.xsd"/>
+	<xsd:element name="Form2949" type="Form2949Type"/>
+	<xsd:complexType name="Form2949Type">
+		<xsd:sequence>
+			<!-- HR Investment Council Number -->
+			<xsd:element name="HRInvestNumber" type="String20Type" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>
+						<Description>HR Investment Council Number</Description>
+						<LineNumber>Before Line 1</LineNumber>
+						<FormNumber>Form1120C-1120S</FormNumber>
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<!-- Employee List -->
+			<xsd:element name="EmployeeList" type="RIF2949JobTrainingCreditType" minOccurs="0" maxOccurs="unbounded">
+				<xsd:annotation>
+					<xsd:documentation>
+						<Description>Employee List</Description>
+						<LineNumber>Before Line 1</LineNumber>
+						<FormNumber>Form1120C-1120S</FormNumber>
+						<ELFFieldNumber/>
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<!-- Educational Institutions -->
+			<xsd:element name="EdInstitutions" type="USAmountNNType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>
+						<Description>Educational Institutions</Description>
+						<LineNumber>Line 1</LineNumber>
+						<FormNumber>Form1120C-1120S</FormNumber>
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<!-- Other Expenses -->
+			<xsd:element name="OtherExp" type="USAmountNNType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>
+						<Description>Other Expenses</Description>
+						<LineNumber>Line 2</LineNumber>
+						<FormNumber>Form1120C-1120S</FormNumber>
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<!-- Eligible Wages -->
+			<xsd:element name="EligibleWages" type="USAmountNNType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>
+						<Description>Eligible Wages</Description>
+						<LineNumber>Line 3</LineNumber>
+						<FormNumber>Form1120C-1120S</FormNumber>
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<!-- Grants Received -->
+			<xsd:element name="GrantsRcvd" type="USAmountNNType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>
+						<Description>Grants Received</Description>
+						<LineNumber>Line 5</LineNumber>
+						<FormNumber>Form1120C-1120S</FormNumber>
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<!-- Training Expenses -->
+			<xsd:element name="TrainingExp" type="USAmountNNType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>
+						<Description>Training Expenses</Description>
+						<LineNumber>Line 6</LineNumber>
+						<FormNumber>Form1120C-1120S</FormNumber>
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<!-- Carryover Prior Year -->
+			<xsd:element name="CarryoverPriorYr" type="USAmountNNType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>
+						<Description>Carryover Prior Year</Description>
+						<LineNumber>Line 11</LineNumber>
+						<FormNumber>Form1120C-1120S</FormNumber>
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+</xsd:schema>

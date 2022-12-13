@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2011 rel. 2 sp1 (http://www.altova.com) by Daniel Clemence (ASC X12) -->
+<xsd:schema xmlns="http://www.irs.gov/efile" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.irs.gov/efile" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.06">
+	<xsd:include schemaLocation="../../RICommon/RIeFileTypes.xsd"/>
+	<xsd:element name="SchCRPT" type="SchCRPTType"/>
+	<xsd:complexType name="SchCRPTType">
+		<xsd:sequence>
+			<!-- Tax Credit to Scholarship Organizations RI-2276 -->
+			<xsd:element name="CreditScholarOrg" type="USAmountNNType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>
+						<Description>Tax Credit to Scholarship Organizations RI-2276</Description>
+						<LineNumber>1</LineNumber>
+						<FormNumber>SchCR_PT</FormNumber>
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<!-- Historic Preservation Investment Tax Credit RI-286B -->
+			<xsd:element name="HistPresInvestCredit" type="USAmountNNType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>
+						<Description>Historic Preservation Investment Tax Credit RI-286B</Description>
+						<LineNumber>2</LineNumber>
+						<FormNumber>SchCR_PT</FormNumber>
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<!-- RI New Qualified Jobs Incentive Act RI-6754 -->
+			<xsd:element name="QualJobsIncent" type="USAmountNNType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>
+						<Description>RI New Qualified Jobs Incentive Act RI-6754</Description>
+						<LineNumber>3</LineNumber>
+						<FormNumber>SchCR_PT</FormNumber>
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<!-- Rebuild RI Tax Credit RI-7253 -->
+			<xsd:element name="RebuildRICredit" type="USAmountNNType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>
+						<Description>Rebuild RI Tax Credit RI-7253</Description>
+						<LineNumber>4</LineNumber>
+						<FormNumber>SchCR_PT</FormNumber>
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<!-- Motion Picture Production Company Credit RI-8201 -->
+			<xsd:element name="MotionPictCredit" type="USAmountNNType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>
+						<Description>Motion Picture Production Company Credit RI-8201</Description>
+						<LineNumber>5</LineNumber>
+						<FormNumber>SchCR_PT</FormNumber>
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<!--Total Credits -->
+			<xsd:element name="TotalCredits" type="USAmountNNType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>
+						<Description>Total Credits</Description>
+						<LineNumber>6</LineNumber>
+						<FormNumber>SchCR_PT</FormNumber>
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<!--Recapture credit number 1 -->
+			<xsd:element name="RecCreditNum1" type="String10Type" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>
+						<Description>Recapture credit number 1</Description>
+						<LineNumber>7</LineNumber>
+						<FormNumber>SchCR_PT</FormNumber>
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<!--Recapture credit name 1 -->
+			<xsd:element name="RecCreditName1" type="RIString35Type" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>
+						<Description>Recapture credit name 1</Description>
+						<LineNumber>7</LineNumber>
+						<FormNumber>SchCR_PT</FormNumber>
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<!--Recapture credit amount 1 -->
+			<xsd:element name="RecCreditAmt1" type="USAmountNNType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>
+						<Description>Recapture credit amount 1</Description>
+						<LineNumber>7</LineNumber>
+						<FormNumber>SchCR_PT</FormNumber>
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<!--Recapture credit number 2 -->
+			<xsd:element name="RecCreditNum2" type="String10Type" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>
+						<Description>Recapture credit number 2</Description>
+						<LineNumber>8</LineNumber>
+						<FormNumber>SchCR_PT</FormNumber>
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<!--Recapture credit name 2 -->
+			<xsd:element name="RecCreditName2" type="RIString35Type" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>
+						<Description>Recapture credit name 2</Description>
+						<LineNumber>8</LineNumber>
+						<FormNumber>SchCR_PT</FormNumber>
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<!--Recapture credit amount 2 -->
+			<xsd:element name="RecCreditAmt2" type="USAmountNNType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>
+						<Description>Recapture credit amount 1</Description>
+						<LineNumber>8</LineNumber>
+						<FormNumber>SchCR_PT</FormNumber>
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<!--Total Credit Recapture -->
+			<xsd:element name="TotalCreditRecapture" type="USAmountNNType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>
+						<Description>Total Credit Recapture</Description>
+						<LineNumber>9</LineNumber>
+						<FormNumber>SchCR_PT</FormNumber>
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+</xsd:schema>

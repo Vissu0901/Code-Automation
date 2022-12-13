@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2010 rel. 3 sp1 (http://www.altova.com) by Daniel Clemence (ASC X12) -->
+<xsd:schema xmlns="http://www.irs.gov/efile" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.irs.gov/efile" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.06">
+	<xsd:include schemaLocation="../../RICommon/RIeFileTypes.xsd"/>
+	<xsd:element name="Form2441" type="Form2441Type"/>
+	<xsd:complexType name="Form2441Type">
+		<xsd:sequence>
+			<!-- Sec I RI Daycare License Number -->
+			<xsd:element name="SectionILic" type="String20Type" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>
+						<Description>Section I RI Daycare License Number</Description>
+						<LineNumber>Before Line 1</LineNumber>
+						<FormNumber>Form1120C-1120S</FormNumber>
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<!-- Sec I Actual sum of money spent -->
+			<xsd:element name="SecIMoneySpent" type="USAmountNNType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>
+						<Description>Sec I Actual sum of money spent </Description>
+						<LineNumber>Line 1</LineNumber>
+						<FormNumber>Form1120C-1120S</FormNumber>
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<!-- Sec I Credit Available -->
+			<xsd:element name="SecICreditAvail" type="USAmountNNType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>
+						<Description>Sec I Credit Available</Description>
+						<LineNumber>Line 4</LineNumber>
+						<FormNumber>Form1120C-1120S</FormNumber>
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<!-- Sec II RI Daycare License Number -->
+			<xsd:element name="SectionIILic" type="String20Type" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>
+						<Description>Section II RI Daycare License Number</Description>
+						<LineNumber>Before Line 5</LineNumber>
+						<FormNumber>Form1120C-1120S</FormNumber>
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<!-- Sec II Actual sum of money spent -->
+			<xsd:element name="SecIIMoneySpent" type="USAmountNNType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>
+						<Description>Sec II Actual sum of money spent </Description>
+						<LineNumber>Line 5</LineNumber>
+						<FormNumber>Form1120C-1120S</FormNumber>
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<!-- Sec II Federal Tax Basis -->
+			<xsd:element name="SecIIFedTaxBasis" type="USAmountNNType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>
+						<Description>Sec II Federal Tax Basis  </Description>
+						<LineNumber>Line 6</LineNumber>
+						<FormNumber>Form1120C-1120S</FormNumber>
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<!-- Sec II Credit Available -->
+			<xsd:element name="SecIICreditAvail" type="USAmountNNType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>
+						<Description>Sec II Credit Available</Description>
+						<LineNumber>Line 8</LineNumber>
+						<FormNumber>Form1120C-1120S</FormNumber>
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<!-- Sec III RI Daycare License Number -->
+			<xsd:element name="SectionIIILic" type="String20Type" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>
+						<Description>Section III RI Daycare License Number</Description>
+						<LineNumber>Before Line 9</LineNumber>
+						<FormNumber>Form1120C-1120S</FormNumber>
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<!-- Sec III Actual sum of money spent -->
+			<xsd:element name="SecIIIMoneySpent" type="USAmountNNType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>
+						<Description>Sec III Actual sum of money spent </Description>
+						<LineNumber>Line 9</LineNumber>
+						<FormNumber>Form1120C-1120S</FormNumber>
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<!-- Sec III Federal Tax Basis -->
+			<xsd:element name="SecIIIFedTaxBasis" type="USAmountNNType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>
+						<Description>Sec III Federal Tax Basis  </Description>
+						<LineNumber>Line 10</LineNumber>
+						<FormNumber>Form1120C-1120S</FormNumber>
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<!-- Sec III Credit Available -->
+			<xsd:element name="SecIIICreditAvail" type="USAmountNNType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>
+						<Description>Sec III Credit Available</Description>
+						<LineNumber>Line 12</LineNumber>
+						<FormNumber>Form1120C-1120S</FormNumber>
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<!-- Sec IV RI Daycare License Number -->
+			<xsd:element name="SectionIVLic" type="String20Type" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>
+						<Description>Section IV RI Daycare License Number</Description>
+						<LineNumber>Before Line 13</LineNumber>
+						<FormNumber>Form1120C-1120S</FormNumber>
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<!-- Sec IV Rent Lease Foregone -->
+			<xsd:element name="SecIVRentLease" type="USAmountNNType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>
+						<Description>Sec IV Rent Lease Foregone </Description>
+						<LineNumber>Line 13</LineNumber>
+						<FormNumber>Form1120C-1120S</FormNumber>
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<!-- Sec IV Credit Available -->
+			<xsd:element name="SecIVCreditAvail" type="USAmountNNType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>
+						<Description>Sec IV Credit Available</Description>
+						<LineNumber>Line 14</LineNumber>
+						<FormNumber>Form1120C-1120S</FormNumber>
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<!-- Sec V Tax from Appropriate line -->
+			<xsd:element name="SecVApptoLine" type="USAmountNNType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>
+						<Description>Sec V Tax from Appropriate line</Description>
+						<LineNumber>Line 15</LineNumber>
+						<FormNumber>Form1120C-1120S</FormNumber>
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<!-- Sec V Summary Deduction -->
+			<xsd:element name="SecVSumDed" type="USAmountNNType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>
+						<Description>Sec V Summary Deduction </Description>
+						<LineNumber>Line 26</LineNumber>
+						<FormNumber>Form1120C-1120S</FormNumber>
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+</xsd:schema>

@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2016 (x64) (http://www.altova.com) by Altova XML Spy 2016 Professional Edition (RI Division Of Information Technology) -->
+<xsd:schema xmlns="http://www.irs.gov/efile" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.irs.gov/efile" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.06">
+	<xsd:include schemaLocation="../../RICommon/RIeFileTypes.xsd"/>
+	<xsd:element name="SchB_CR" type="SchB_CRType"/>
+	<xsd:complexType name="SchB_CRType">
+		<xsd:sequence>
+			<!-- Tax Credit to Scholarship Organizations RI-2276 -->
+			<xsd:element name="CreditScholarOrg" type="USAmountNNType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>
+						<Description>Tax Credit to Scholarship Organizations RI-2276</Description>
+						<LineNumber>1</LineNumber>
+						<FormNumber>SchB_CR</FormNumber>
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<!-- Adult and Child Day Care Assistance RI-2441 -->
+			<xsd:element name="DayCareAssist" type="USAmountNNType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>
+						<Description>Adult and Child Day Care Assistance RI-2441</Description>
+						<LineNumber>2</LineNumber>
+						<FormNumber>SchB_CR</FormNumber>
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<!-- Historic Preservation Investment Tax Credit RI-286B -->
+			<xsd:element name="HistPresInvestCredit" type="USAmountNNType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>
+						<Description>Historic Preservation Investment Tax Credit RI-286B</Description>
+						<LineNumber>3</LineNumber>
+						<FormNumber>SchB_CR</FormNumber>
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<!-- Employer's Apprenticeship Credit RI-2874 -->
+			<xsd:element name="EmplApprentCredit" type="USAmountNNType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>
+						<Description>Employer's Apprenticeship Credit RI-2874</Description>
+						<LineNumber>4</LineNumber>
+						<FormNumber>SchB_CR</FormNumber>
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<!-- Residential Renewable Energy System Tax Credit RI-2880 -->
+			<xsd:element name="ResidRenewEng" type="USAmountNNType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>
+						<Description>Residential Renewable Energy System Tax Credit RI-2880</Description>
+						<LineNumber>5</LineNumber>
+						<FormNumber>SchB_CR</FormNumber>
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<!-- Investment Tax credit RI-3468 -->
+			<xsd:element name="InvestmentTaxCredit" type="USAmountNNType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>
+						<Description> Investment Tax credit RI-3468</Description>
+						<LineNumber>6</LineNumber>
+						<FormNumber>SchB_CR</FormNumber>
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<!-- Employment Tax Credit RI-3675 -->
+			<xsd:element name="EmploymentTaxCredit" type="USAmountNNType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>
+						<Description>  Employment Tax Credit RI-3675</Description>
+						<LineNumber>7</LineNumber>
+						<FormNumber>SchB_CR</FormNumber>
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<!-- Educational Assistance and Development Tax Credit RI-5009 -->
+			<xsd:element name="EdAssistAndDev" type="USAmountNNType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>
+						<Description> Educational Assistance and Development Tax Credit RI-5009 -</Description>
+						<LineNumber>8</LineNumber>
+						<FormNumber>SchB_CR</FormNumber>
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<!-- Adult Education Tax Credit RI-6324 -->
+			<xsd:element name="AdltEdCredit" type="USAmountNNType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>
+						<Description> Adult Education Tax Credit RI-6324 -</Description>
+						<LineNumber>9</LineNumber>
+						<FormNumber>SchB_CR</FormNumber>
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<!-- RI New Qualified Jobs Incentive Act RI-6754 -->
+			<xsd:element name="QualJobsIncent" type="USAmountNNType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>
+						<Description>RI New Qualified Jobs Incentive Act RI-6754</Description>
+						<LineNumber>10</LineNumber>
+						<FormNumber>SchB_CR</FormNumber>
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<!-- Small Business Development Fund RI7233-->
+			<xsd:element name="BusinessDevelopmentFund" type="USAmountNNType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>
+						<Description>RI Small Business Development Fund RI-7233</Description>
+						<LineNumber>11</LineNumber>
+						<FormNumber>SchB_CR</FormNumber>
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<!-- Rebuild RI Tax Credit RI-7253 -->
+			<xsd:element name="RebuildRICredit" type="USAmountNNType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>
+						<Description>Rebuild RI Tax Credit RI-7253</Description>
+						<LineNumber>12</LineNumber>
+						<FormNumber>SchB_CR</FormNumber>
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<!-- Research and Development Facilities Expense Credit RI-769E -->
+			<xsd:element name="RDFacExp" type="USAmountNNType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>
+						<Description>Research and Development Facilities Expense Credit RI-769E</Description>
+						<LineNumber>13</LineNumber>
+						<FormNumber>SchB_CR</FormNumber>
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<!-- Research and Development Facilities Property Credit RI-769P -->
+			<xsd:element name="RDFacProp" type="USAmountNNType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>
+						<Description>Research and Development Facilities Property Credit RI-769P</Description>
+						<LineNumber>14</LineNumber>
+						<FormNumber>SchB_CR</FormNumber>
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<!-- Motion Picture Production Company Credit RI-8201 -->
+			<xsd:element name="MotionPictCredit" type="USAmountNNType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>
+						<Description>Motion Picture Production Company Credit RI-8201</Description>
+						<LineNumber>15</LineNumber>
+						<FormNumber>SchB_CR</FormNumber>
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<!-- Disabled Access Credit RI-8826 -->
+			<xsd:element name="DisabledAccess" type="USAmountNNType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>
+						<Description>Disabled Access Credit RI-8826</Description>
+						<LineNumber>16</LineNumber>
+						<FormNumber>SchB_CR</FormNumber>
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<!-- Jobs Development Rate Reduction Credit RI-9261 -->
+			<xsd:element name="JobsDevRate" type="USAmountNNType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>
+						<Description>Jobs Development Rate Reduction Credit RI-9261</Description>
+						<LineNumber>17</LineNumber>
+						<FormNumber>SchB_CR</FormNumber>
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<!--Total Credits -->
+			<xsd:element name="TotalCredits" type="USAmountNNType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>
+						<Description>Total Credits</Description>
+						<LineNumber>18</LineNumber>
+						<FormNumber>SchB_CR</FormNumber>
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+</xsd:schema>

@@ -1,0 +1,404 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2010 rel. 3 sp1 (http://www.altova.com) by Daniel Clemence (ASC X12) -->
+<xsd:schema xmlns="http://www.irs.gov/efile" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.irs.gov/efile" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.06">
+	<xsd:include schemaLocation="../../RICommon/RIeFileTypes.xsd"/>
+	<xsd:element name="SchK1" type="SchK1Type"/>
+	<xsd:complexType name="SchK1Type">
+		<xsd:sequence>
+			<!-- Entity Information -->
+			<xsd:element name="EligibleCorp" type="RIEligCorpSubType" minOccurs="0"/>
+			<!-- Entity Type S-Corp -->
+			<xsd:element name="SCorpCkBox" type="CheckboxType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>
+						<Description>Entity Type S-Corp</Description>
+						<LineNumber>Above Line 1 (checkbox)</LineNumber>
+						<FormNumber>SchK1</FormNumber>
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<!-- Entity Type LLC -->
+			<xsd:element name="LLCCkBox" type="CheckboxType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>
+						<Description>Entity Type LLC</Description>
+						<LineNumber>Above Line 1 (checkbox)</LineNumber>
+						<FormNumber>SchK1</FormNumber>
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<!-- Entity Type Partnership -->
+			<xsd:element name="PartCkBox" type="CheckboxType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>
+						<Description>Entity Type Partnership</Description>
+						<LineNumber>Above Line 1 (checkbox)</LineNumber>
+						<FormNumber>SchK1</FormNumber>
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<!-- Taxpayer Id Number -->
+			<xsd:element name="TaxpayerIdNumber" type="SSNType"/>
+			<!-- Member Information -->
+			<xsd:element name="EligibleSub" type="RIEligCorpSubType" minOccurs="0"/>
+			<!-- Amended K1 -->
+			<xsd:element name="AmdK1CkBox" type="CheckboxType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>
+						<Description>Amended K1</Description>
+						<LineNumber>Above Line 1 (checkbox)</LineNumber>
+						<FormNumber>SchK1</FormNumber>
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<!-- Final K1 -->
+			<xsd:element name="FinalK1CkBox" type="CheckboxType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>
+						<Description>Final K1</Description>
+						<LineNumber>Above Line 1 (checkbox)</LineNumber>
+						<FormNumber>SchK1</FormNumber>
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<!-- Composite Filing Included -->
+			<xsd:element name="CompositeCkBox" type="CheckboxType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>
+						<Description>Composite Filing Included </Description>
+						<LineNumber>Above Line 1 (checkbox)</LineNumber>
+						<FormNumber>SchK1</FormNumber>
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<!-- Taxpayer's state of residency  -->
+			<xsd:element name="StateRes" type="StateType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>
+						<Description>Taxpayer's state of residency </Description>
+						<LineNumber>Above Line 1 </LineNumber>
+						<FormNumber>SchK1</FormNumber>
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<!-- Taxpayer's RI Apportionment Percentage -->
+			<xsd:element name="TaxPyrRIAlloctRatio" type="RICorpRatioType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>
+						<Description>Taxpayer's Apportionment Percentage</Description>
+						<LineNumber>Above Line 1 </LineNumber>
+						<FormNumber>SchK1</FormNumber>
+						<ELFFieldNumber/>
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<!-- Ownership Percentage -->
+			<xsd:element name="OwnershipPct" type="RICorpRatioType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>
+						<Description>Ownership Percentage </Description>
+						<LineNumber>Above Line 1 </LineNumber>
+						<FormNumber>SchK1</FormNumber>
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<!-- Taxpayer's Income and Deduction Information -->
+			<!-- Income Allocable to RI -->
+			<xsd:element name="IncAllocRI" type="USAmountType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>
+						<Description>Income Allocable to RI </Description>
+						<LineNumber>Line 1</LineNumber>
+						<FormNumber>SchK1</FormNumber>
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<!-- Interest and Dividends Allocable to RI -->
+			<xsd:element name="IntDivAllocRI" type="USAmountType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>
+						<Description>Interest and Dividends Allocable to RI </Description>
+						<LineNumber>Line 2</LineNumber>
+						<FormNumber>SchK1</FormNumber>
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<!-- Sale or Exchange of Property-->
+			<xsd:element name="SaleExchRI" type="USAmountType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>
+						<Description>Sale or Exchange of Property</Description>
+						<LineNumber>Line 3</LineNumber>
+						<FormNumber>SchK1</FormNumber>
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<!-- Rents and Royalties Allocable to RI-->
+			<xsd:element name="RentRoyalAllocRI" type="USAmountType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>
+						<Description>Rents and Royalties Allocable to RI</Description>
+						<LineNumber>Line 4</LineNumber>
+						<FormNumber>SchK1</FormNumber>
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<!-- Miscellaneous Income Apportioned to RI -->
+			<xsd:element name="MiscIncAppRI" type="USAmountType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>
+						<Description>Miscellaneous Income Apportioned to RI </Description>
+						<LineNumber>Line 5</LineNumber>
+						<FormNumber>SchK1</FormNumber>
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<!--  Section 179 deduction Apportioned to RI -->
+			<xsd:element name="Sec179DedAppRI" type="USAmountType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>
+						<Description>Section 179 deduction Apportioned to RI</Description>
+						<LineNumber>Line 6</LineNumber>
+						<FormNumber>SchK1</FormNumber>
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<!-- Other deductions Apportioned to RI-->
+			<xsd:element name="OthDedAppRI" type="USAmountType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>
+						<Description>Other deductions Apportioned to RI-</Description>
+						<LineNumber>Line 7</LineNumber>
+						<FormNumber>SchK1</FormNumber>
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<!-- Taxpayer's Other Additions -->
+			<!-- Additions Political Subdivisions -->
+			<xsd:element name="AddPolSub" type="USAmountType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>
+						<Description>Additions Political Subdivisions </Description>
+						<LineNumber>Line 1</LineNumber>
+						<FormNumber>SchK1</FormNumber>
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<!-- Additions bonus depreciation -->
+			<xsd:element name="AddBonusDep" type="USAmountType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>
+						<Description>Additions bonus depreciation</Description>
+						<LineNumber>Line 2</LineNumber>
+						<FormNumber>SchK1</FormNumber>
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<!-- Additions PTE -->
+			<xsd:element name="PTE" type="USAmountType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>
+						<Description>Pass Through Enity Tax</Description>
+						<LineNumber>Line 3</LineNumber>
+						<FormNumber>SchK1</FormNumber>
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<!-- AdditionsPaychecks Protection -->
+			<xsd:element name="PaycheckProtection" type="USAmountType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>
+						<Description>Paycheck Protection</Description>
+						<LineNumber>Line 4</LineNumber>
+						<FormNumber>SchK1</FormNumber>
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<!-- Taxpayer's Other Deductions -->
+			<!-- Exempt From State -->
+			<xsd:element name="DedExemptState" type="USAmountType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>
+						<Description>Exempt From State </Description>
+						<LineNumber>Line 1</LineNumber>
+						<FormNumber>SchK1</FormNumber>
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<!-- Elective deduction -->
+			<xsd:element name="DedElective" type="USAmountType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>
+						<Description>Elective deduction</Description>
+						<LineNumber>Line 2</LineNumber>
+						<FormNumber>SchK1</FormNumber>
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<!-- Qualifying investment deduction -->
+			<xsd:element name="DedQualInvest" type="USAmountType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>
+						<Description>Qualifying investment deduction</Description>
+						<LineNumber>Line 3</LineNumber>
+						<FormNumber>SchK1</FormNumber>
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<!-- Deduction bonus depreciation -->
+			<xsd:element name="DedBonusDep" type="USAmountType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>
+						<Description>Deduction bonus depreciation</Description>
+						<LineNumber>Line 4</LineNumber>
+						<FormNumber>SchK1</FormNumber>
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<!-- Deduction 179 depreciation -->
+			<xsd:element name="Ded179Dep" type="USAmountType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>
+						<Description>Deduction 179 depreciation</Description>
+						<LineNumber>Line 5</LineNumber>
+						<FormNumber>SchK1</FormNumber>
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<!-- Deduction discharge indebtedness -->
+			<!-- Deduction Incentives for Employers -->
+			<xsd:element name="DedIncEmployers" type="USAmountType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>
+						<Description>Deduction Incentives for Employers</Description>
+						<LineNumber>Line 6</LineNumber>
+						<FormNumber>SchK1</FormNumber>
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<!-- Deduction Cash Basis Only -->
+			<xsd:element name="CashBasisOnly" type="USAmountType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>
+						<Description>Cash Basis Only</Description>
+						<LineNumber>Line 7</LineNumber>
+						<FormNumber>SchK1</FormNumber>
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<!-- Composite Filing Information -->
+			<!-- Composite Income RI source -->
+			<xsd:element name="CompIncRI" type="USAmountType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>
+						<Description>Composite Income RI source </Description>
+						<LineNumber>Line 1</LineNumber>
+						<FormNumber>SchK1</FormNumber>
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<!-- Composite payment -->
+			<xsd:element name="CompPmt" type="USAmountType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>
+						<Description>Composite Payment </Description>
+						<LineNumber>Line 2</LineNumber>
+						<FormNumber>SchK1</FormNumber>
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<!-- Pass-Trough Withholding Filing Information -->
+			<!-- Pass-Trough Withholding RI source -->
+			<xsd:element name="PTWthRI" type="USAmountType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>
+						<Description>Pass-Trough Withholding RI source </Description>
+						<LineNumber>Line 1</LineNumber>
+						<FormNumber>SchK1</FormNumber>
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<!-- Pass-Trough Withholding payment -->
+			<xsd:element name="PTWthPmt" type="USAmountType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>
+						<Description>Pass-Through Withholding Payment </Description>
+						<LineNumber>Line 2</LineNumber>
+						<FormNumber>SchK1</FormNumber>
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<!-- Member Credit Breakdown -->
+			<!--SectionVI RI PTE Election Info -->
+			<xsd:element name="PTEEntityElectionSource" type="USAmountType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>
+						<Description>PTE Entity Source </Description>
+						<LineNumber>Line 1</LineNumber>
+						<FormNumber>SchK1</FormNumber>
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="PTEntityElectionTaxPaid" type="USAmountType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>
+						<Description>PTE Entity Election Tax Paid</Description>
+						<LineNumber>Line 2</LineNumber>
+						<FormNumber>SchK1</FormNumber>
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<!-- Member Credit Breakdown -->
+			<!-- RI - 2276 Contributions to Qualified Scholarship Organization-->
+			<xsd:element name="K1RI2276" type="USAmountNNType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>
+						<Description>RI - 2276 Contributions to Qualified Scholarship Organization</Description>
+						<LineNumber>Line 1</LineNumber>
+						<FormNumber>K1</FormNumber>
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<!-- RI - 286B Historic Preservation Investment -->
+			<xsd:element name="K1RI286B" type="USAmountNNType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>
+						<Description>RI - 286B Historic Preservation Investment </Description>
+						<LineNumber>Line 2</LineNumber>
+						<FormNumber>K1</FormNumber>
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<!-- RI - 6754 New Qualified Jobs-->
+			<xsd:element name="K1RI6754" type="USAmountNNType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>
+						<Description>RI - 6754 New Qualified Jobsl</Description>
+						<LineNumber>Line 3</LineNumber>
+						<FormNumber>K1</FormNumber>
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<!-- RI - 7253 Rebuild RI Tax Credit-->
+			<xsd:element name="K1RI7253" type="USAmountNNType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>
+						<Description>RI - 7253 Rebuild RI Tax Credit</Description>
+						<LineNumber>Line 4</LineNumber>
+						<FormNumber>K1</FormNumber>
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<!-- RI - 8201 Motion Picture Production Company-->
+			<xsd:element name="K1RI8201" type="USAmountNNType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>
+						<Description>RI - 8201 Motion Picture Production Company</Description>
+						<LineNumber>Line 5</LineNumber>
+						<FormNumber>K1</FormNumber>
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+</xsd:schema>

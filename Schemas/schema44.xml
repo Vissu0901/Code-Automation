@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2006 sp1 U (http://www.altova.com) by SCDOR (SC DEPT OF REVENUE & TAXATION) -->
+<xsd:schema xmlns="http://www.irs.gov/efile" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.irs.gov/efile" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0">
+	<xsd:annotation>
+		<xsd:documentation>
+			<Description>State e-file Corporate Parent and Subsidiary Return Header schemas</Description>
+		</xsd:documentation>
+	</xsd:annotation>
+	<xsd:include schemaLocation="../Common/efileTypes.xsd"/>
+	<!-- Common elements for various return header types -->
+	<xsd:group name="ReturnHeaderCommon">
+		<xsd:annotation>
+			<xsd:documentation>Content model for the common return header elements</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<!-- Software Identification -->
+			<xsd:element name="SoftwareId" type="SoftwareIdType" minOccurs="0"/>
+			<!-- Software Version -->
+			<xsd:element name="SoftwareVersionNum" type="SoftwareVersionType" minOccurs="0"/>
+			<!-- Tax Period Begin Date -->
+			<xsd:element name="TaxPeriodBeginDt" type="DateType" minOccurs="0"/>
+			<!-- Tax Period End Date -->
+			<xsd:element name="TaxPeriodEndDt" type="DateType" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:group>
+	<xsd:complexType name="ReturnHeaderParentType">
+		<xsd:annotation>
+			<xsd:documentation>Content model for the parent return header</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<!-- Parent Corporation -->
+			<xsd:element name="ParentCorp">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="EIN" type="EINType"/>
+						<xsd:element name="StateEIN" type="StringType" minOccurs="0"/>
+						<xsd:element name="Name" type="BusinessNameType"/>
+						<xsd:choice minOccurs="0">
+							<xsd:element name="USAddress" type="USAddressType"/>
+							<xsd:element name="ForeignAddress" type="ForeignAddressType"/>
+						</xsd:choice>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:group ref="ReturnHeaderCommon"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="ReturnHeaderSubsidiaryType">
+		<xsd:annotation>
+			<xsd:documentation>Content model for subsidiary return header</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<!-- Subsidiary Corporation -->
+			<xsd:element name="SubsidiaryCorp">
+				<xsd:complexType>
+					<xsd:sequence>
+						<!-- Choice between EIN or "APPLD FOR" -->
+						<xsd:choice>
+							<!-- EIN -->
+							<xsd:element name="EIN" type="EINType">
+								<xsd:annotation>
+									<xsd:documentation>
+										<Description>Employer identification number</Description>
+									</xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							<!-- Missing EIN Reason -->
+							<xsd:element name="MissingEINReason">
+								<xsd:annotation>
+									<xsd:documentation>
+										<Description>Missing EIN reason</Description>
+									</xsd:documentation>
+								</xsd:annotation>
+								<xsd:simpleType>
+									<xsd:restriction base="StringType">
+										<xsd:enumeration value="APPLD FOR"/>
+									</xsd:restriction>
+								</xsd:simpleType>
+							</xsd:element>
+						</xsd:choice>
+						<xsd:element name="StateEIN" type="StringType" minOccurs="0"/>
+						<xsd:element name="Name" type="BusinessNameType"/>
+						<xsd:choice minOccurs="0">
+							<xsd:element name="USAddress" type="USAddressType"/>
+							<xsd:element name="ForeignAddress" type="ForeignAddressType"/>
+						</xsd:choice>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:group ref="ReturnHeaderCommon"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="ReturnHeaderEliminationsType">
+		<xsd:annotation>
+			<xsd:documentation>Content model for the eliminations return header</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:group ref="ReturnHeaderCommon"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="ReturnHeaderAdjustmentsType">
+		<xsd:annotation>
+			<xsd:documentation>Content model for the adjustments return header</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:group ref="ReturnHeaderCommon"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="ReturnHeaderSubconsolidationType">
+		<xsd:annotation>
+			<xsd:documentation>Content model for the 1120, 1120L, and 1120PC subconsolidation return header</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:group ref="ReturnHeaderCommon"/>
+		</xsd:sequence>
+	</xsd:complexType>
+</xsd:schema>

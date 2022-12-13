@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns="http://www.irs.gov/efile" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.irs.gov/efile" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0">
+	<xsd:include schemaLocation="BusinessReturnOtherHeaderState.xsd"/>
+	<xsd:include schemaLocation="../Common/BinaryAttachment.xsd"/>
+	<xsd:include schemaLocation="ParentReturnDataState.xsd"/>
+	<xsd:element name="ParentReturnState">
+		<xsd:annotation>
+			<xsd:documentation>Schema for a parent corporation return within a corporate filing</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="ReturnHeaderState" type="ReturnHeaderParentType"/>
+				<xsd:element ref="ParentReturnDataState"/>
+				<xsd:element ref="BinaryAttachment" minOccurs="0" maxOccurs="9999"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+</xsd:schema>

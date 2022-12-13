@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2010 rel. 3 sp1 (http://www.altova.com) by Daniel Clemence (ASC X12) -->
+<xsd:schema xmlns="http://www.irs.gov/efile" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.irs.gov/efile" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.06">
+	<xsd:include schemaLocation="../../RICommon/RIeFileTypes.xsd"/>
+	<xsd:element name="SchJ_1120s" type="SchJ_1120sType"/>
+	<xsd:complexType name="SchJ_1120sType">
+		<xsd:sequence>
+			<!-- Check if utilizing an alternative allocation apportionment -->
+			<xsd:element name="ChckBoxAlternative" type="CheckboxType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>
+						<Description>Check if utilizing an alternative allocation apportionment </Description>
+						<LineNumber>Above Line 1</LineNumber>
+						<FormNumber>Form1120S</FormNumber>
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<!-- Inventory  -->
+			<xsd:element name="Inventory" type="RIApporClmnType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>
+						<Description>Inventory</Description>
+						<LineNumber>Line 1A</LineNumber>
+						<FormNumber>Form1120S</FormNumber>
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<!-- Depreciable assets -->
+			<xsd:element name="DepAssets" type="RIApporClmnType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>
+						<Description>Depreciable assets</Description>
+						<LineNumber>Line 1B</LineNumber>
+						<FormNumber>Form1120S</FormNumber>
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<!-- Land  -->
+			<xsd:element name="Land" type="RIApporClmnType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>
+						<Description>Land</Description>
+						<LineNumber>Line 1C</LineNumber>
+						<FormNumber>Form1120S</FormNumber>
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<!-- Rent -->
+			<xsd:element name="Rent" type="RIApporClmnType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>
+						<Description>Rent</Description>
+						<LineNumber>Line 1D</LineNumber>
+						<FormNumber>Form1120S</FormNumber>
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<!-- Average Total -->
+			<xsd:element name="AvgTotal" type="RIApporClmnType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>
+						<Description>Average Total</Description>
+						<LineNumber>Line 1E</LineNumber>
+						<FormNumber>Form1120S</FormNumber>
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<!-- Average RI Ratio -->
+			<xsd:element name="AvgRIRatio" type="RICorpRatioType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>
+						<Description>Average RI Ratio</Description>
+						<LineNumber>Line 1F</LineNumber>
+						<FormNumber>Form1120S</FormNumber>
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<!-- Gross Receipts RI Sales  -->
+			<xsd:element name="GrossRecRISales" type="RIApporClmnType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>
+						<Description>Gross Receipts RI Sales</Description>
+						<LineNumber>Line 2A</LineNumber>
+						<FormNumber>Form1120S</FormNumber>
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<!-- Gross Receipts Sales under 44-11-14 -->
+			<xsd:element name="GrossRecSales" type="USAmountType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>
+						<Description>Gross Receipts Sales under 44-11-14</Description>
+						<LineNumber>Line 2A</LineNumber>
+						<FormNumber>Form1120S</FormNumber>
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<!-- Dividends  -->
+			<xsd:element name="Dividends" type="RIApporClmnType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>
+						<Description>Dividends</Description>
+						<LineNumber>Line 2B</LineNumber>
+						<FormNumber>Form1120S</FormNumber>
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<!-- Interest -->
+			<xsd:element name="Interest" type="RIApporClmnType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>
+						<Description>Interest</Description>
+						<LineNumber>Line 2C</LineNumber>
+						<FormNumber>Form1120S</FormNumber>
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<!-- Receipts Rent -->
+			<xsd:element name="RecRent" type="RIApporClmnType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>
+						<Description>Receipts Rent</Description>
+						<LineNumber>Line 2D</LineNumber>
+						<FormNumber>Form1120S</FormNumber>
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<!-- Royalties -->
+			<xsd:element name="Royalties" type="RIApporClmnType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>
+						<Description>Royalties</Description>
+						<LineNumber>Line 2E</LineNumber>
+						<FormNumber>Form1120S</FormNumber>
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<!-- Net Capital Gains  -->
+			<xsd:element name="NetCapGains" type="RIApporClmnType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>
+						<Description>Net Capital Gains</Description>
+						<LineNumber>Line 2F</LineNumber>
+						<FormNumber>Form1120S</FormNumber>
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<!-- Ordinary Income -->
+			<xsd:element name="OrdinaryInc" type="RIApporClmnType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>
+						<Description>Ordinary Income</Description>
+						<LineNumber>Line 2G</LineNumber>
+						<FormNumber>Form1120S</FormNumber>
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<!-- Other Income -->
+			<xsd:element name="OtherInc" type="RIApporClmnType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>
+						<Description>Other Income</Description>
+						<LineNumber>Line 2H</LineNumber>
+						<FormNumber>Form1120S</FormNumber>
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<!-- Income exempt from Federal -->
+			<xsd:element name="IncExmptFed" type="RIApporClmnType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>
+						<Description>Income exempt from Federal</Description>
+						<LineNumber>Line 2I</LineNumber>
+						<FormNumber>Form1120S</FormNumber>
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<!-- Receipts Total -->
+			<xsd:element name="RecTotal" type="RIApporClmnType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>
+						<Description>Receipts Total</Description>
+						<LineNumber>Line 2J</LineNumber>
+						<FormNumber>Form1120S</FormNumber>
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<!-- Receipts RI Ratio -->
+			<xsd:element name="RecRIRatio" type="RICorpRatioType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>
+						<Description>Receipts RI Ratio</Description>
+						<LineNumber>Line 2K</LineNumber>
+						<FormNumber>Form1120S</FormNumber>
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<!-- Salaries and Wages -->
+			<xsd:element name="SalWages" type="RIApporClmnType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>
+						<Description>Salaries and Wages</Description>
+						<LineNumber>Line 3A</LineNumber>
+						<FormNumber>Form1120S</FormNumber>
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<!-- Salaries RI Ratio -->
+			<xsd:element name="SalRIRatio" type="RICorpRatioType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>
+						<Description>Salaries RI Ratio</Description>
+						<LineNumber>Line 3B</LineNumber>
+						<FormNumber>Form1120S</FormNumber>
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<!-- Total of RI Ratio -->
+			<xsd:element name="TotalRIRatio" type="RICorpTotalRatioType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>
+						<Description>Total of RI Ratio</Description>
+						<LineNumber>Line 4</LineNumber>
+						<FormNumber>Form1120S</FormNumber>
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<!-- Apportionment RI Ratio -->
+			<xsd:element name="ApporRIRatio" type="RICorpRatioType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>
+						<Description>Apportionment RI Ratio</Description>
+						<LineNumber>Line 5</LineNumber>
+						<FormNumber>Form1120S</FormNumber>
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+</xsd:schema>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2010 rel. 3 sp1 (http://www.altova.com) by Daniel Clemence (ASC X12) -->
+<xsd:schema xmlns="http://www.irs.gov/efile" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.irs.gov/efile" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.06">
+	<xsd:include schemaLocation="../../RICommon/RIeFileTypes.xsd"/>
+	<xsd:element name="Form6324" type="Form6324Type"/>
+	<xsd:complexType name="Form6324Type">
+		<xsd:sequence>
+			<!-- Identification Number -->
+			<xsd:element name="IdNumber" type="String20Type" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>
+						<Description>Identification Number</Description>
+						<LineNumber>Before Line 1</LineNumber>
+						<FormNumber>Form1120C-1120S</FormNumber>
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<!-- Employee List -->
+			<xsd:element name="EmployeeList" type="RI6324EmpAdultEdCreditType" minOccurs="0" maxOccurs="unbounded">
+				<xsd:annotation>
+					<xsd:documentation>
+						<Description>Employee List</Description>
+						<LineNumber>Before Line 1</LineNumber>
+						<FormNumber>Form1120C-1120S</FormNumber>
+						<ELFFieldNumber/>
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<!-- Total-->
+			<xsd:element name="Total" type="USAmountNNType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>
+						<Description>Total</Description>
+						<LineNumber>Line 1</LineNumber>
+						<FormNumber>Form1120C-1120S</FormNumber>
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<!-- Credit-->
+			<xsd:element name="Credit" type="USAmountNNType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>
+						<Description>Credit</Description>
+						<LineNumber>Line 3</LineNumber>
+						<FormNumber>Form1120C-1120S</FormNumber>
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+</xsd:schema>

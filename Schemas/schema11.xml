@@ -1,0 +1,521 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2016 (x64) (http://www.altova.com) by Altova XML Spy 2016 Professional Edition (RI Division Of Information Technology) -->
+<xsd:schema xmlns="http://www.irs.gov/efile" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.irs.gov/efile" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.06">
+	<xsd:include schemaLocation="../../RICommon/RIeFileTypes.xsd"/>
+	<xsd:include schemaLocation="SchCRPT.xsd"/>
+	<xsd:include schemaLocation="SchF.xsd"/>
+	<xsd:include schemaLocation="SchG.xsd"/>
+	<xsd:include schemaLocation="SchH.xsd"/>
+	<xsd:include schemaLocation="SchI.xsd"/>
+	<xsd:include schemaLocation="SchJ_1120s.xsd"/>
+	<xsd:complexType name="Form1120SType">
+		<xsd:sequence>
+			<xsd:element name="TelephoneNumber" type="PhoneNumberType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>
+						<Description>Telephone Number</Description>
+						<LineNumber>Above Line 1</LineNumber>
+						<FormNumber>Form1120S</FormNumber>
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="InitialReturn" type="CheckboxType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>
+						<Description>Initial Return Checkbox</Description>
+						<LineNumber>Above Line 1</LineNumber>
+						<FormNumber>Form1120S</FormNumber>
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="FinalReturn" type="CheckboxType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>
+						<Description>Final Return Checkbox</Description>
+						<LineNumber>Above Line 1</LineNumber>
+						<FormNumber>Form1120S</FormNumber>
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="ShortYear" type="CheckboxType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>
+						<Description>Short Year Checkbox</Description>
+						<LineNumber>Above Line 1</LineNumber>
+						<FormNumber>Form1120S</FormNumber>
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="QSubIncluded" type="CheckboxType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>
+						<Description>QSub Included Checkbox</Description>
+						<LineNumber>Above Line 1</LineNumber>
+						<FormNumber>Form1120S</FormNumber>
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="Amended" type="CheckboxType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>
+						<Description>Amended Checkbox</Description>
+						<LineNumber>Above Line 1</LineNumber>
+						<FormNumber>Form1120S</FormNumber>
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="AddressChange" type="CheckboxType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>
+						<Description>Address Change Checkbox</Description>
+						<LineNumber>Above Line 1</LineNumber>
+						<FormNumber>Form1120S</FormNumber>
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<!-- Total Number of Q-Sub Returns -->
+			<xsd:element name="TotalQSubCount" type="IntegerNNType"/>
+			<!-- Gross Receipts -->
+			<xsd:element name="GrossRec" type="USAmountType">
+				<xsd:annotation>
+					<xsd:documentation>
+						<Description>Gross Receipts</Description>
+						<LineNumber>Box A</LineNumber>
+						<FormNumber>Form1120S</FormNumber>
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<!-- Depreciable Assets -->
+			<xsd:element name="DepAssets" type="USAmountType">
+				<xsd:annotation>
+					<xsd:documentation>
+						<Description>Depreciable Assets</Description>
+						<LineNumber>Box B</LineNumber>
+						<FormNumber>Form1120S</FormNumber>
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<!-- Total Assets -->
+			<xsd:element name="TotalAssets" type="USAmountType">
+				<xsd:annotation>
+					<xsd:documentation>
+						<Description>Total Assets</Description>
+						<LineNumber>Box C</LineNumber>
+						<FormNumber>Form1120S</FormNumber>
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<!-- Secretary of State Id number -->
+			<xsd:element name="SoSId" type="EINType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>
+						<Description>Secretary of State Id number</Description>
+						<LineNumber>Box D</LineNumber>
+						<FormNumber>Form1120C</FormNumber>
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="SchA" type="SchA1120SType" minOccurs="0"/>
+			<xsd:element name="SchB" type="SchB1120SType" minOccurs="0"/>
+			<xsd:element name="SchC" type="SchC1120SType" minOccurs="0"/>
+			<xsd:element name="SchE" type="SchE1120SType" minOccurs="0"/>
+			<xsd:element name="SchF" type="SchFType" minOccurs="0"/>
+			<xsd:element name="SchG" type="SchGType" minOccurs="0"/>
+			<xsd:element name="SchH" type="SchIType" minOccurs="0"/>
+			<xsd:element name="SchI_1120s" type="SchJ_1120sType" minOccurs="0"/>
+			<xsd:element name="SchS" type="SchSType" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="SchA1120SType">
+		<xsd:sequence>
+			<!-- Federal Taxable Income -->
+			<xsd:element name="FedTaxableInc" type="USAmountType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>
+						<Description>Federal Taxable Income</Description>
+						<LineNumber>Line 1</LineNumber>
+						<FormNumber>Form1120S</FormNumber>
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<!-- Total Deductions -->
+			<xsd:element name="TotalDeductions" type="USAmountType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>
+						<Description>Total Deductions</Description>
+						<LineNumber>Line 2</LineNumber>
+						<FormNumber>Form1120S</FormNumber>
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<!-- Total Additions -->
+			<xsd:element name="TotalAdditions" type="USAmountType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>
+						<Description>Total Additions</Description>
+						<LineNumber>Line 3</LineNumber>
+						<FormNumber>Form1120S</FormNumber>
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<!-- Adjusted Taxable Income-->
+			<xsd:element name="AdjTaxableInc" type="USAmountType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>
+						<Description>Adjusted Taxable Income</Description>
+						<LineNumber>Line 4</LineNumber>
+						<FormNumber>Form1120S</FormNumber>
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<!-- RI Apportionment Ratio -->
+			<xsd:element name="RIApportionmentRatio" type="RICorpRatioType">
+				<xsd:annotation>
+					<xsd:documentation>
+						<Description>RI Apportionment Ratio</Description>
+						<LineNumber>Line 5</LineNumber>
+						<FormNumber>Form1120S</FormNumber>
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<!-- Apportioned RI Taxable Income-->
+			<xsd:element name="ApportionedRITaxInc" type="USAmountType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>
+						<Description>Apportioned RI Taxable Income</Description>
+						<LineNumber>Line 6</LineNumber>
+						<FormNumber>Form1120S</FormNumber>
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<!-- Franchise Tax Min $500 -->
+			<xsd:element name="FranTaxAmt" type="USAmountNNType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>
+						<Description>Franchise Tax Min $500 </Description>
+						<LineNumber>Line 7a</LineNumber>
+						<FormNumber>Form1120S</FormNumber>
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<!-- Jobs Growth Check Box -->
+			<xsd:element name="JobsGrowthChkBx" type="CheckboxType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>
+						<Description>Jobs Growth Check Box</Description>
+						<LineNumber>Line 7b</LineNumber>
+						<FormNumber>Form1120S</FormNumber>
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<!-- Jobs Growth Tax -->
+			<xsd:element name="JobsGrowthTax" type="USAmountNNType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>
+						<Description>Jobs Growth Tax </Description>
+						<LineNumber>Line 7b</LineNumber>
+						<FormNumber>Form1120S</FormNumber>
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<!-- Tax Amount Min $500 -->
+			<xsd:element name="TaxAmt" type="USAmountNNType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>
+						<Description>Tax Amount Min $500 </Description>
+						<LineNumber>Line 8</LineNumber>
+						<FormNumber>Form1120S</FormNumber>
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<!-- Payments made on current year estimated tax -->
+			<xsd:element name="EstTaxPmt" type="USAmountNNType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>
+						<Description>Payments made on current year estimated tax </Description>
+						<LineNumber>Line 9a</LineNumber>
+						<FormNumber>Form1120S</FormNumber>
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<!-- Other Payments -->
+			<xsd:element name="OtherPmt" type="USAmountNNType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>
+						<Description>Other Payments</Description>
+						<LineNumber>Line 9b</LineNumber>
+						<FormNumber>Form1120S</FormNumber>
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<!-- Total Payments -->
+			<xsd:element name="TotalPmt" type="USAmountType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>
+						<Description>Total Payments</Description>
+						<LineNumber>Line 10</LineNumber>
+						<FormNumber>Form1120S</FormNumber>
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<!-- Net Tax Due -->
+			<xsd:element name="NetTaxDue" type="USAmountType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>
+						<Description>Net Tax Due </Description>
+						<LineNumber>Line 11</LineNumber>
+						<FormNumber>Form1120S</FormNumber>
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<!-- Interest -->
+			<xsd:element name="Interest" type="USAmountType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>
+						<Description>Interest </Description>
+						<LineNumber>Line 12a</LineNumber>
+						<FormNumber>Form1120S</FormNumber>
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<!-- Penalty -->
+			<xsd:element name="Penalty" type="USAmountType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>
+						<Description>Penalty </Description>
+						<LineNumber>Line 12b</LineNumber>
+						<FormNumber>Form1120S</FormNumber>
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<!-- Form 2220 Interest -->
+			<xsd:element name="Form2220Int" type="USAmountType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>
+						<Description>Form 2220 Interest</Description>
+						<LineNumber>Line 12c</LineNumber>
+						<FormNumber>Form1120S</FormNumber>
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<!-- Tax Due with Return -->
+			<xsd:element name="TaxDueWithRtn" type="USAmountType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>
+						<Description>Tax Due with Return</Description>
+						<LineNumber>Line 13</LineNumber>
+						<FormNumber>Form1120S</FormNumber>
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<!-- Overpayment -->
+			<xsd:element name="Overpayment" type="USAmountType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>
+						<Description>Overpayment</Description>
+						<LineNumber>Line 14</LineNumber>
+						<FormNumber>Form1120S</FormNumber>
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<!-- Overpayment credited to next year -->
+			<xsd:element name="OverpmtNextYear" type="USAmountType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>
+						<Description>Overpayment credited to next year</Description>
+						<LineNumber>Line 15</LineNumber>
+						<FormNumber>Form1120S</FormNumber>
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<!-- Refund -->
+			<xsd:element name="Refund" type="USAmountType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>
+						<Description>Refund</Description>
+						<LineNumber>Line 16</LineNumber>
+						<FormNumber>Form1120S</FormNumber>
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<!-- Contact Preparer Check Box Yes-->
+			<xsd:element name="ContactPreparerChkBxYes" type="CheckboxType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>
+						<Description>Contact Preparer Check Box Yes</Description>
+						<LineNumber/>
+						<FormNumber>Form1120S</FormNumber>
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="SchB1120SType">
+		<xsd:sequence>
+			<!-- Exempt Interest -->
+			<xsd:element name="ExemptInt" type="USAmountNNType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>
+						<Description>Exempt Interest</Description>
+						<LineNumber>Line 1A</LineNumber>
+						<FormNumber>Form1120S</FormNumber>
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<!-- Bonus Depreciation Adjustment-->
+			<xsd:element name="BonusDepAdj" type="USAmountNNType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>
+						<Description>Bonus Depreciation Adjustment</Description>
+						<LineNumber>Line 1B</LineNumber>
+						<FormNumber>Form1120S</FormNumber>
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<!-- Modification for Tax Incentives for Employees-->
+			<xsd:element name="ModIncentEmpl" type="USAmountNNType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>
+						<Description>Modification for Tax Incentives for Employees</Description>
+						<LineNumber>Line 1C</LineNumber>
+						<FormNumber>Form1120S</FormNumber>
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<!-- Deduction for Pass Thru Entity-->
+			<xsd:element name="PassThruEntityTaxClaimed" type="USAmountNNType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>
+						<Description>Modification for Pass Thru Entity tax Claimed</Description>
+						<LineNumber>Line 1D</LineNumber>
+						<FormNumber>Form1120S</FormNumber>
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="SchC1120SType">
+		<xsd:sequence>
+			<!-- Additions to Federal Taxable Income -->
+			<!-- Interest -->
+			<xsd:element name="Interest" type="USAmountNNType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>
+						<Description>Interest</Description>
+						<LineNumber>Line 1A</LineNumber>
+						<FormNumber>Form1120S</FormNumber>
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<!-- Bonus Depreciation and Section 179 -->
+			<xsd:element name="BonusDep179" type="USAmountNNType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>
+						<Description>Bonus Depreciation and Section 179</Description>
+						<LineNumber>Line 1B</LineNumber>
+						<FormNumber>Form1120S</FormNumber>
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<!-- Intangible Addback-->
+			<xsd:element name="IntAddback" type="USAmountNNType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>
+						<Description>Intangible Addback</Description>
+						<LineNumber>Line 1C</LineNumber>
+						<FormNumber>Form1120S</FormNumber>
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<!-- Pass Thru Entity -->
+			<xsd:element name="PassThroughEntityTax" type="USAmountNNType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>
+						<Description>PassThroughEnityTax</Description>
+						<LineNumber>Line 1D</LineNumber>
+						<FormNumber>Form1120S</FormNumber>
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<!-- TaxbalePortionOfPaycheckProtectionProgramLoan -->
+			<xsd:element name="TaxablePortionOfPaycheckProtectionLoanAmount" type="USAmountNNType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>
+						<Description>TaxablePortionOfPaycheckProtectionLoanAmount</Description>
+						<LineNumber>Line 1E</LineNumber>
+						<FormNumber>Form1120S</FormNumber>
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="SchE1120SType">
+		<xsd:sequence>
+			<!-- Other Deductions to Federal Income -->
+			<!-- Elective Deduction for Research and Development -->
+			<xsd:element name="ElectDedRD" type="USAmountNNType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>
+						<Description>Elective Deduction for Research and Developmen</Description>
+						<LineNumber>Line 1</LineNumber>
+						<FormNumber>Form1120S</FormNumber>
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<!-- Qualifying Investment Certified Venture Capital -->
+			<xsd:element name="QualifyingInvestCVC" type="USAmountNNType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>
+						<Description>Qualifying Investment Certified Venture Capital</Description>
+						<LineNumber>Line 2</LineNumber>
+						<FormNumber>Form1120S</FormNumber>
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="SchSType">
+		<xsd:sequence>
+			<!-- Excess Net Passive Taxable Income -->
+			<xsd:element name="ExcessNetIncome" type="USAmountNNType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>
+						<Description>Excess Net Passive Taxable Income</Description>
+						<LineNumber>Line 1</LineNumber>
+						<FormNumber>Form1120S</FormNumber>
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<!-- Taxable Income from Federal 1120S -->
+			<xsd:element name="TaxIncFed1120S" type="USAmountNNType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>
+						<Description>Taxable Income from Federal 1120S</Description>
+						<LineNumber>Line 2</LineNumber>
+						<FormNumber>Form1120S</FormNumber>
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<!-- Apportionment RI Ratio -->
+			<xsd:element name="ApporRIRatio" type="RICorpRatioType">
+				<xsd:annotation>
+					<xsd:documentation>
+						<Description>Apportionment Ratio</Description>
+						<LineNumber>Line 4</LineNumber>
+						<FormNumber>Form1120S</FormNumber>
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<!-- Tax -->
+			<xsd:element name="Tax1120S" type="USAmountNNType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>
+						<Description>Taxable Income from RI 1120S</Description>
+						<LineNumber>Line 8</LineNumber>
+						<FormNumber>Form1120S</FormNumber>
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+</xsd:schema>

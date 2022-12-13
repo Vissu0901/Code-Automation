@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2010 rel. 3 sp1 (http://www.altova.com) by Daniel Clemence (ASC X12) -->
+<xsd:schema xmlns="http://www.irs.gov/efile" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.irs.gov/efile" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.06">
+	<xsd:include schemaLocation="../../RICommon/RIeFileTypes.xsd"/>
+	<xsd:element name="Form2874" type="Form2874Type"/>
+	<xsd:complexType name="Form2874Type">
+		<xsd:sequence>
+			<!-- Apprenticeships this year -->
+			<xsd:element name="ApprentCurrentYr" type="IntegerNNType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>
+						<Description>Apprenticeships this year</Description>
+						<LineNumber>Line 1</LineNumber>
+						<FormNumber>Form1120C-1120S</FormNumber>
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<!-- Apprenticeships 5yr prior -->
+			<xsd:element name="Apprent5YrPrior" type="IntegerNNType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>
+						<Description>Apprenticeships 5yr prior</Description>
+						<LineNumber>Line 2</LineNumber>
+						<FormNumber>Form1120C-1120S</FormNumber>
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<!-- Apprenticeships 4yr prior -->
+			<xsd:element name="Apprent4YrPrior" type="IntegerNNType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>
+						<Description>Apprenticeships 4yr prior</Description>
+						<LineNumber>Line 3</LineNumber>
+						<FormNumber>Form1120C-1120S</FormNumber>
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<!-- Apprenticeships 3yr prior -->
+			<xsd:element name="Apprent3YrPrior" type="IntegerNNType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>
+						<Description>Apprenticeships 3yr prior</Description>
+						<LineNumber>Line 4</LineNumber>
+						<FormNumber>Form1120C-1120S</FormNumber>
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<!-- Apprenticeships 2yr prior -->
+			<xsd:element name="Apprent2YrPrior" type="IntegerNNType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>
+						<Description>Apprenticeships 2yr prior</Description>
+						<LineNumber>Line 5</LineNumber>
+						<FormNumber>Form1120C-1120S</FormNumber>
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<!-- Apprenticeships 1yr prior -->
+			<xsd:element name="Apprent1YrPrior" type="IntegerNNType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>
+						<Description>Apprenticeships 1yr prior</Description>
+						<LineNumber>Line 6</LineNumber>
+						<FormNumber>Form1120C-1120S</FormNumber>
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<!-- Total divided by 5 -->
+			<xsd:element name="TotalDividedBy5" type="IntegerNNType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>
+						<Description>Total divided by 5</Description>
+						<LineNumber>Line 7</LineNumber>
+						<FormNumber>Form1120C-1120S</FormNumber>
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<!-- Threshold Test - Yes -->
+			<xsd:element name="ThresholdYes" type="CheckboxType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>
+						<Description>Threshold Test - No</Description>
+						<LineNumber>Line 9 Checkbox Yes</LineNumber>
+						<FormNumber>Form1120C-1120S</FormNumber>
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<!-- Threshold Test - No -->
+			<xsd:element name="ThresholdNo" type="CheckboxType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>
+						<Description>Threshold Test - No</Description>
+						<LineNumber>Line 9 Checkbox No</LineNumber>
+						<FormNumber>Form1120C-1120S</FormNumber>
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<!-- Employee List -->
+			<xsd:element name="EmployeeList" type="RI2874ApprenticeshipClmnType" minOccurs="0" maxOccurs="unbounded">
+				<xsd:annotation>
+					<xsd:documentation>
+						<Description>Employee List</Description>
+						<LineNumber>Before Line 1</LineNumber>
+						<FormNumber>Form1120C-1120S</FormNumber>
+						<ELFFieldNumber/>
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<!-- Total Credits -->
+			<xsd:element name="TotalCredits" type="USAmountNNType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>
+						<Description>Total Credits  </Description>
+						<LineNumber>Line 1</LineNumber>
+						<FormNumber>Form1120C-1120S</FormNumber>
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<!-- Total Credits Used -->
+			<xsd:element name="TotalCreditsUsed" type="USAmountNNType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>
+						<Description>Total Credits Used </Description>
+						<LineNumber>Line 2</LineNumber>
+						<FormNumber>Form1120C-1120S</FormNumber>
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+</xsd:schema>

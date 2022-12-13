@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2010 rel. 3 sp1 (http://www.altova.com) by Susan Galvin (ASC X12) -->
+<xsd:schema xmlns="http://www.irs.gov/efile" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.irs.gov/efile" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.06">
+	<xsd:include schemaLocation="../../RICommon/RIeFileTypes.xsd"/>
+	<xsd:element name="Form3468" type="Form3468Type"/>
+	<xsd:complexType name="Form3468Type">
+		<xsd:sequence>
+			<!-- Identification Number -->
+			<!-- US Business Code Number -->
+			<xsd:element name="IdNumber" type="String20Type" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>
+						<Description>Identification Number</Description>
+						<LineNumber>Before Line A</LineNumber>
+						<FormNumber>Form1120C</FormNumber>
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="USBusCode" type="BusinessActivityCodeType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>
+						<Description>US Business Code Number</Description>
+						<LineNumber>Before Line A</LineNumber>
+						<FormNumber>Form1120C</FormNumber>
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<!-- High Performance Manufacturer -->
+			<xsd:element name="HighPerfManuf" type="CheckboxType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>
+						<Description>High Performance Manufacturer Checkbox</Description>
+						<LineNumber>Above Line A</LineNumber>
+						<FormNumber>Form1120C</FormNumber>
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<!-- 10% Investment Tax Credit Calculation -->
+			<xsd:element name="InvestTaxCr10" type="RIInvestTaxCreditClmnType" minOccurs="0" maxOccurs="unbounded">
+				<xsd:annotation>
+					<xsd:documentation>
+						<Description>10% Investment Tax Credit Calculation</Description>
+						<LineNumber>Before Line A</LineNumber>
+						<FormNumber>Form1120C</FormNumber>
+						<ELFFieldNumber/>
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<!-- Credit Amount for 10% Investment Tax Credit-->
+			<xsd:element name="CrAmtInvestTax10" type="USAmountNNType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>
+						<Description>Credit Amount for 10% Invest Tax Credit</Description>
+						<LineNumber>BeforeLine A</LineNumber>
+						<FormNumber>Form1120C</FormNumber>
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<!-- Unused 10% Investment Tax Credit from Prior Years-->
+			<xsd:element name="UnusedInvestTaxCrPrior10" type="USAmountNNType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>
+						<Description>Unused Investment Tax Credit Prior Years</Description>
+						<LineNumber>BeforeLine A</LineNumber>
+						<FormNumber>Form1120C</FormNumber>
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<!-- Total 10% Investment Tax Credit Available -->
+			<xsd:element name="TotalTaxCr10" type="USAmountNNType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>
+						<Description>Total Investment Tax Credit Available DLT </Description>
+						<LineNumber>Line A</LineNumber>
+						<FormNumber>Form1120C</FormNumber>
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<!-- 4% Investment Tax Credit -->
+			<xsd:element name="InvestTaxCr4" type="RIInvestTaxCreditClmnType" minOccurs="0" maxOccurs="unbounded">
+				<xsd:annotation>
+					<xsd:documentation>
+						<Description>Property List</Description>
+						<LineNumber>Before Line B</LineNumber>
+						<FormNumber>Form1120C</FormNumber>
+						<ELFFieldNumber/>
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<!-- Credit Amount for 4% Investment Tax Credit-->
+			<xsd:element name="CrAmtInvestTax4" type="USAmountNNType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>
+						<Description>Credit Amount for 10% Invest Tax Credit</Description>
+						<LineNumber>BeforeLine B</LineNumber>
+						<FormNumber>Form1120C</FormNumber>
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<!-- Unused 4% Investment Tax Credit from Prior Years-->
+			<xsd:element name="UnusedInvestTaxCrPrior4" type="USAmountNNType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>
+						<Description>Unused Investment Tax Credit From Prior Years</Description>
+						<LineNumber>BeforeLine B</LineNumber>
+						<FormNumber>Form1120C</FormNumber>
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<!-- Total 4% Investment Tax Credit Available-->
+			<xsd:element name="TotalTaxCr4" type="USAmountNNType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>
+						<Description>Total Investment Tax Credit Available </Description>
+						<LineNumber>Line B</LineNumber>
+						<FormNumber>Form1120C</FormNumber>
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<!-- Maximum ITC Amount -->
+			<xsd:element name="MaxITCAmt" type="USAmountNNType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>
+						<Description>Maximum ITC Amount</Description>
+						<LineNumber>Line 3</LineNumber>
+						<FormNumber>Form1120C</FormNumber>
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<!-- 4% ITC Credit Used -->
+			<xsd:element name="ITCCrUsed" type="USAmountNNType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>
+						<Description>4% ITC Credit Used</Description>
+						<LineNumber>Line 5</LineNumber>
+						<FormNumber>Form1120C</FormNumber>
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<!-- 10% ITC Credit Used -->
+			<xsd:element name="ITCCrUsedDLT" type="USAmountNNType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>
+						<Description>10% ITC Credit Used</Description>
+						<LineNumber>Line 8</LineNumber>
+						<FormNumber>Form1120C</FormNumber>
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<!-- 4% ITC Carryforward Amount -->
+			<xsd:element name="ITCCarryforwardAmt4" type="USAmountNNType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>
+						<Description>ITC Carryforward Amount</Description>
+						<LineNumber>Line 10</LineNumber>
+						<FormNumber>Form1120C</FormNumber>
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<!-- 10% ITC Carryforward Amount -->
+			<xsd:element name="ITCCarryforwardAmt10" type="USAmountNNType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>
+						<Description>ITC Carryforward Amount DLT</Description>
+						<LineNumber>Line 11</LineNumber>
+						<FormNumber>Form1120C</FormNumber>
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+</xsd:schema>

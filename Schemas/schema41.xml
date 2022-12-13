@@ -1,0 +1,661 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2008 sp1 (http://www.altova.com) by Daniel Clemence (ASC X12) -->
+<xsd:schema xmlns="http://www.irs.gov/efile" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.irs.gov/efile" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0">
+	<xsd:include schemaLocation="../Common/eFileTypes.xsd"/>
+	<xsd:include schemaLocation="../Common/StateeFileTypes.xsd"/>
+	<xsd:include schemaLocation="../StateBusiness/BusinessStateEnumerations.xsd"/>
+	<xsd:annotation>
+		<xsd:documentation>
+			<Description>Rhode Island e-file Business Income Tax Schema - Base types commonly used across schema files</Description>
+			<TaxYear>2010</TaxYear>
+			<MaturityLevel>Test Release</MaturityLevel>
+			<ReleaseDate>March 3, 2010</ReleaseDate>
+		</xsd:documentation>
+	</xsd:annotation>
+	<!-- Apportionment 2 Columns -->
+	<xsd:complexType name="RIApporClmnType">
+		<xsd:annotation>
+			<xsd:documentation>Apportionment 2 Columns</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<!-- Rhode Island Amount Coulmn A -->
+			<xsd:element name="RIAmt" type="USAmountType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Rhode Island Amount</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<!-- Everywhere Amount Coulmn B -->
+			<xsd:element name="EverywhereAmt" type="USAmountType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Evertwhere Amount</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<!-- Business Allocation Percentage 2 Columns -->
+	<xsd:complexType name="RIBusinessAllocClmnType">
+		<xsd:annotation>
+			<xsd:documentation>Business Allocation Percentage 2 Columns</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<!-- Rhode Island Amount Coulmn A -->
+			<xsd:element name="RIAmt" type="USAmountType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Rhode Island Amount</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<!-- Total Amount Coulmn B -->
+			<xsd:element name="TotalAmt" type="USAmountType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Total Amount</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<!-- Part-Year Resident Allocation and Tax Worksheet 4 Columns -->
+	<xsd:complexType name="RIPartYrAllocTaxWrkshtClmnType">
+		<xsd:annotation>
+			<xsd:documentation>Part-Year Resident Allocation and Tax Worksheet 4 Columns</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<!-- Income from Federal Return Coulmn A -->
+			<xsd:element name="FedIncAmt" type="USAmountType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Income from Federal Return Coulmn A</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<!-- Income from Federal return While in Rhode Island Coulmn B -->
+			<xsd:element name="FedIncRIResAmt" type="USAmountType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Income from Federal return While in Rhode Island Coulmn B</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<!-- Nonresident Income from Federal Return Coulmn C -->
+			<xsd:element name="NonresFedIncAmt" type="USAmountType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Nonresident Income from Federal Return Coulmn C</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<!-- Noresident Rhode Island Source Income Coulmn D -->
+			<xsd:element name="NonresRISourceInc" type="USAmountType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Noresident Rhode Island Source Income Coulmn D</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<!-- Short Term Capital Gains 6 Columns -->
+	<xsd:complexType name="RIShortTrmCapGnClmnType">
+		<xsd:annotation>
+			<xsd:documentation>Short Term Capital Gains 6 Columns</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="DesOfProp" type="String50Type" default="" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Description of property</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:choice minOccurs="0">
+				<xsd:element name="DateAccq" type="DateType" minOccurs="0"/>
+				<xsd:element name="DateAccqDesc" type="RIDateAccqDescType" minOccurs="0"/>
+			</xsd:choice>
+			<xsd:element name="DateSold" type="DateType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Date sold</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="SalesPrice" type="USAmountNNType" default="0" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Sales price</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="CostOrOtherBasis" type="USAmountNNType" default="0" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Cost or other basis</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="GainOrLoss" type="USAmountType" default="0" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Gain or loss</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<!-- Long Term Capital Gains 7 Columns -->
+	<xsd:complexType name="RILngTrmCapGnClmnType">
+		<xsd:annotation>
+			<xsd:documentation>Long Term Capital Gains 7 Columns</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="RIShortTrmCapGnClmnType">
+				<xsd:sequence>
+					<xsd:element name="Qualified5YrGainOrLoss" type="USAmountType" default="0" minOccurs="0">
+						<xsd:annotation>
+							<xsd:documentation>Qualified 5 year gain or loss</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:simpleType name="RISmallRatioType">
+		<xsd:annotation>
+			<xsd:documentation>A fraction between 0 and 1 that allows up to 2 decimal places</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:decimal">
+			<xsd:totalDigits value="3"/>
+			<xsd:fractionDigits value="2"/>
+			<xsd:minInclusive value="0.00"/>
+			<xsd:maxInclusive value="1.00"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="RIRatioType">
+		<xsd:restriction base="xsd:decimal">
+			<xsd:totalDigits value="5"/>
+			<xsd:fractionDigits value="4"/>
+			<xsd:minInclusive value="0.0000"/>
+			<xsd:maxInclusive value="1.0000"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="RICorpRatioType">
+		<xsd:restriction base="xsd:decimal">
+			<xsd:totalDigits value="7"/>
+			<xsd:fractionDigits value="6"/>
+			<xsd:minInclusive value="0.000000"/>
+			<xsd:maxInclusive value="1.000000"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="RICorpTotalRatioType">
+		<xsd:restriction base="xsd:decimal">
+			<xsd:totalDigits value="7"/>
+			<xsd:fractionDigits value="6"/>
+			<xsd:minInclusive value="0.000000"/>
+			<xsd:maxInclusive value="3.000000"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="RIString20Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="20"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="RIString22Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="22"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="RIString35Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="35"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<!-- RI 2874 Apprenticeship 5 Columns -->
+	<xsd:complexType name="RI2874ApprenticeshipClmnType">
+		<xsd:annotation>
+			<xsd:documentation>RI 2874 Apprenticeship 5 Columns</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<!-- Employee/Apprentice Name -->
+			<xsd:element name="EmployeeName" type="RIString35Type" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Employee/Apprentice Name</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<!-- Social Security Number -->
+			<xsd:element name="EmpSSN" type="SSNType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Social Security Number</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<!-- Wages Paid -->
+			<xsd:element name="WagesPaid" type="USAmountType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Wages Paid</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<!-- 50 Pct Wages Paid -->
+			<xsd:element name="Pct50WagesPaid" type="USAmountType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>50 Pct Wages Paid</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<!-- Credit Max -->
+			<xsd:element name="CreditMax" type="USAmountType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Credit Max</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<!-- RI F2949 Job Training Credit 7 Columns -->
+	<xsd:complexType name="RIF2949JobTrainingCreditType">
+		<xsd:annotation>
+			<xsd:documentation>RI F2949 Job Training Credit 7 Columns</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<!-- Employee Name -->
+			<xsd:element name="EmployeeName" type="RIString35Type" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Employee/Apprentice Name</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<!-- Social Security Number -->
+			<xsd:element name="EmpSSN" type="SSNType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Social Security Number</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<!-- Hourly Rate -->
+			<xsd:element name="HourlyRate" type="USAmountType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Hourly Rate</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<!-- Average Hours Weekly -->
+			<xsd:element name="AvgHrsWeekly" type="IntegerNNType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Average Hours Weekly</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<!-- Eligible Wages  -->
+			<xsd:element name="EligibleWages" type="USAmountType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Eligible Wages </xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<!-- Individual Expenses -->
+			<xsd:element name="IndividualExpenses" type="USAmountType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Individual Expenses</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<!-- Net Expenses -->
+			<xsd:element name="NetExp" type="USAmountType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Net Expenses</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<!--Investment Tax Credit 7 Columns -->
+	<xsd:complexType name="RIInvestTaxCreditClmnType">
+		<xsd:annotation>
+			<xsd:documentation>Investment Tax Credit 7 Columns</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="DesOfProp" type="String50Type" default="" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Description of property</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:choice minOccurs="0">
+				<xsd:element name="DatePlaced" type="DateType" minOccurs="0"/>
+				<xsd:element name="DatePlacedDesc" type="RIDateAccqDescType" minOccurs="0"/>
+			</xsd:choice>
+			<xsd:choice minOccurs="0">
+				<xsd:element name="DateAccq" type="DateType" minOccurs="0"/>
+				<xsd:element name="DateAccqDesc" type="RIDateAccqDescType" minOccurs="0"/>
+			</xsd:choice>
+			<xsd:element name="Life" type="String50Type" default="" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Life</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="Cost" type="USAmountNNType" default="0" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Cost</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="PctQualifying" type="String10Type" default="0" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Pct Qualifying</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="BasisCredit" type="USAmountType" default="0" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Basis for Credit</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<!-- RI 6324 Employer's Adult Education Credit 5 Columns -->
+	<xsd:complexType name="RI6324EmpAdultEdCreditType">
+		<xsd:annotation>
+			<xsd:documentation>RI 6324 Employer's Adult Education Credit 5 Columns</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<!-- Employee/Apprentice Name -->
+			<xsd:element name="EmployeeName" type="RIString35Type" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Employee/Apprentice Name</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<!-- Social Security Number -->
+			<xsd:element name="EmpSSN" type="SSNType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Social Security Number</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<!-- Costs this employee -->
+			<xsd:element name="CostsEmployee" type="USAmountType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Costs this employee</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<!-- 50 Pct of Cost -->
+			<xsd:element name="Pct50Cost" type="USAmountType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>50 Pct of Cost</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<!-- Credit Max -->
+			<xsd:element name="CreditMax" type="USAmountType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Credit Max</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<!-- RI Form 9261 Eligible Corp/Sub -->
+	<xsd:complexType name="RIEligCorpSubType">
+		<xsd:sequence>
+			<xsd:element name="Name" type="BusinessNameType"/>
+			<xsd:choice minOccurs="0">
+				<xsd:element name="USAddress" type="USAddressType"/>
+				<xsd:element name="ForeignAddress" type="ForeignAddressType"/>
+			</xsd:choice>
+			<xsd:choice minOccurs="0">
+				<xsd:element name="EIN" type="EINType"/>
+				<xsd:element name="TaxpayerIdNumber" type="SSNType"/>
+			</xsd:choice>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:simpleType name="RIDateAccqDescType">
+		<xsd:annotation>
+			<xsd:documentation>Enumerate the specific element types for DateAccqDesc element</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="String20Type">
+			<xsd:enumeration value="Various"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<!-- SchG BusLoc Address type -->
+	<xsd:complexType name="RIBusLocType">
+		<xsd:sequence>
+			<xsd:choice minOccurs="0">
+				<xsd:element name="USAddress" type="USAddressType"/>
+				<xsd:element name="ForeignAddress" type="ForeignAddressType"/>
+			</xsd:choice>
+		</xsd:sequence>
+	</xsd:complexType>
+	<!-- List of Partners 1065 5 Columns -->
+	<xsd:complexType name="RI1065ListPartnersType">
+		<xsd:annotation>
+			<xsd:documentation>List of Partners 1065 5 Columns</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<!-- Partner Name -->
+			<xsd:element name="Name" type="PersonNameType"/>
+			<xsd:choice>
+				<xsd:element name="USAddress" type="USAddressType"/>
+				<xsd:element name="ForeignAddress" type="ForeignAddressType"/>
+			</xsd:choice>
+			<!-- Social Security Number -->
+			<xsd:element name="PartnerSSN" type="SSNType">
+				<xsd:annotation>
+					<xsd:documentation>Partner Social Security Number</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<!-- Non Resident Check Box -->
+			<xsd:element name="NonResidentChkBox" type="BooleanType">
+				<xsd:annotation>
+					<xsd:documentation>Non Resident Check Box </xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<!-- Ownership Percentage -->
+			<xsd:element name="OwnershipPct" type="RISmallRatioType">
+				<xsd:annotation>
+					<xsd:documentation>Ownership Percentage</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<!-- Share of RI Source Income -->
+			<xsd:element name="ShareRIIncome" type="USAmountType">
+				<xsd:annotation>
+					<xsd:documentation>Share of RI Source Income</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<!-- Underpayment of estimated tax 2 Columns -->
+	<xsd:complexType name="RIUnderPaymentClmnType">
+		<xsd:annotation>
+			<xsd:documentation>Underpayment of estimated tax 2 Columns</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<!-- First Installment Date Coulmn A -->
+			<xsd:element name="FirstInstall" type="USAmountType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>First Installment Amount</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<!-- Second Installment Date Coulmn A -->
+			<xsd:element name="SecInstall" type="USAmountType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Second Installment Amount</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<!-- Combined Reporting Study 3 Columns -->
+	<xsd:complexType name="RICombRpt3ClmnType">
+		<xsd:annotation>
+			<xsd:documentation>Combined Reporting Study 3 Columns</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<!-- Rhode Island Coulmn A -->
+			<xsd:element name="CombRI" type="USAmountType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Rhode Island Coulmn A</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<!-- Everywhere Column B-->
+			<xsd:element name="CombEverywhere" type="USAmountType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Everywhere Column B-</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<!-- Ratio Column C -->
+			<xsd:element name="CombRatio" type="RISmallRatioType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Ratio Column C</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<!-- Combined Reporting Study Large Ratio 2 Columns  -->
+	<xsd:complexType name="RICombLargeRatioTotal2ClmnType">
+		<xsd:annotation>
+			<xsd:documentation>Combined Reporting Study Large Ratio 2 Columns</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<!-- Joyce Method Coulmn A -->
+			<xsd:element name="CombJoyceRatio" type="RICorpTotalRatioType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Joyce Method Coulmn A</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<!-- Finnigan Method Column B-->
+			<xsd:element name="CombFinnRatio" type="RICorpTotalRatioType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Finnigan Method Column B-</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<!-- Combined Reporting Study Ratio 2 Columns RICorpTotalRatioType -->
+	<xsd:complexType name="RICombRatioTotal2ClmnType">
+		<xsd:annotation>
+			<xsd:documentation>Combined Reporting Study Ratio 2 Columns</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<!-- Joyce Method Coulmn A -->
+			<xsd:element name="CombJoyceRatio" type="RISmallRatioType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Joyce Method Coulmn A</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<!-- Finnigan Method Column B-->
+			<xsd:element name="CombFinnRatio" type="RISmallRatioType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Finnigan Method Column B-</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<!-- Combined Reporting Study  2 Columns -->
+	<xsd:complexType name="RICombTotal2ClmnType">
+		<xsd:annotation>
+			<xsd:documentation>Combined Reporting Study  2 Columns </xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<!-- Joyce Method Coulmn A -->
+			<xsd:element name="CombJoyce" type="USAmountType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Joyce Method Coulmn A</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<!-- Finnigan Method Column B-->
+			<xsd:element name="CombFinn" type="USAmountType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Finnigan Method Column B-</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<!-- Combined Reporting Study RI-Worldwide 2 Columns -->
+	<xsd:complexType name="RI-WorldComb2ClmnType">
+		<xsd:annotation>
+			<xsd:documentation> Combined Reporting Study RI-Worldwide 2 Columns</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<!-- RI Coulmn A -->
+			<xsd:element name="CombRI" type="USAmountType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>RI Coulmn A </xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<!-- Worldwide Column B-->
+			<xsd:element name="CombWorldwide" type="USAmountType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Worldwide Column B-</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<!-- Combined Reporting Study 3 Columns -->
+	<xsd:complexType name="RIComb3ClmnType">
+		<xsd:annotation>
+			<xsd:documentation> Combined Reporting Study 3 Columns</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<!-- Federal ID Coulmn A -->
+			<xsd:element name="CombFedID" type="EINType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Federal ID Coulmn A </xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<!-- Name Column B-->
+			<xsd:element name="CombName" type="RIString35Type" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Name Column B-</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<!-- RI Filing Requirement Column C-->
+			<xsd:element name="CombFilReqYN">
+				<xsd:annotation>
+					<xsd:documentation>RI Filing Requirement Column C-</xsd:documentation>
+				</xsd:annotation>
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:enumeration value="Y"/>
+						<xsd:enumeration value="N"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<!-- RI CGM Schedule 3 Columns -->
+	<xsd:complexType name="RISchCGMClmnType">
+		<xsd:annotation>
+			<xsd:documentation>RI Schedule CGM 3 Columns</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<!-- Combined Group Member Column 1 -->
+			<xsd:element name="CombinedGroupMember" type="RIString35Type">
+				<xsd:annotation>
+					<xsd:documentation>Combined Group Member Column 1</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<!-- CGM FEIN Coulmn 2 -->
+			<xsd:element name="CGMFEIN" type="EINType">
+				<xsd:annotation>
+					<xsd:documentation>FEIN Column 2</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<!-- CGM Address Column 3 -->
+			<xsd:element name="CGMAddress">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:choice minOccurs="0">
+							<xsd:element name="USAddress" type="USAddressType"/>
+							<xsd:element name="ForeignAddress" type="ForeignAddressType"/>
+						</xsd:choice>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<!-- Checkbox CGM has nexus -->
+			<xsd:element name="ChkBoxNexus" type="CheckboxType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Checkbox Nexus </xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<!-- RI Schedule Table 3 Columns -->
+	<xsd:complexType name="RISchDClmnType">
+		<xsd:annotation>
+			<xsd:documentation>RI Schedule CGM 3 Columns</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<!-- Schedule D Pass-through Withholding table -->
+			<!-- Name -->
+			<xsd:element name="Name" type="RIString35Type">
+				<xsd:annotation>
+					<xsd:documentation>
+						<Description>Name</Description>
+						<LineNumber>Table</LineNumber>
+						<FormNumber>Form1120C</FormNumber>
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<!-- FEIN -->
+			<xsd:element name="FEIN" type="EINType">
+				<xsd:annotation>
+					<xsd:documentation>
+						<Description>FEIN</Description>
+						<LineNumber>Table</LineNumber>
+						<FormNumber>Form1120C</FormNumber>
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<!-- Pass-through Withholding Amount -->
+			<xsd:element name="PassThroughWithholdingAmount" type="USAmountNNType">
+				<xsd:annotation>
+					<xsd:documentation>
+						<Description>Pass-through Withholding Amount</Description>
+						<LineNumber>Table</LineNumber>
+						<FormNumber>Form1120C</FormNumber>
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+</xsd:schema>
