@@ -16,6 +16,7 @@ def find_the_files(path):
     return list_xsd_files
 
 def get_list_of_files(path,ext):
+    os.chdir(path)
     files = os.listdir(path)
     for item in files:
         if os.path.isdir(os.path.join(path, item)):
