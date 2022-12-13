@@ -16,14 +16,17 @@ def find_the_files(path):
     return list_xsd_files
 
 def get_list_of_files(path,ext):
-    files = os.listdir(path)
-    for item in files:
-        if os.path.isdir(os.path.join(path, item)):
-            get_list_of_files(os.path.join(path, item), ext)
-        else:
-            if item.endswith(ext):
-                list_of_files.append(os.path.join(path, item))
-    return sorted(list(set(list_of_files)))
+    try:
+        files = os.listdir(path)
+        for item in files:
+            if os.path.isdir(os.path.join(path, item)):
+                get_list_of_files(os.path.join(path, item), ext)
+            else:
+                if item.endswith(ext):
+                    list_of_files.append(os.path.join(path, item))
+        return sorted(list(set(list_of_files)))
+    except:
+        return "no directory"
 
 def get_list_of_xml_files():
     loc = Path("./Schemas")
